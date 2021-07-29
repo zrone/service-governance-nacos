@@ -1,5 +1,5 @@
 {
-    "name": "hyperf/service-governance-nacos",
+    "name": "zrone/service-governance-nacos",
     "description": "A nacos adapter for service governance.",
     "license": "MIT",
     "keywords": [
