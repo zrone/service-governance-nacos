@@ -59,8 +59,8 @@ class NacosDriver implements DriverInterface
     public function getNodes(string $uri, string $name, array $metadata): array
     {
         $response = $this->client->instance->list($name, [
-            'groupName' => $this->config->get('services.drivers.nacos.group_name'),
-            'namespaceId' => $this->config->get('services.drivers.nacos.namespace_id'),
+            'groupName' => $metadata['group_name'] ?? $this->config->get('services.drivers.nacos.group_name'),
+            'namespaceId' => $metadata['namespace_id'] ?? $this->config->get('services.drivers.nacos.namespace_id'),
         ]);
         if ($response->getStatusCode() !== 200) {
             throw new RequestException((string) $response->getBody(), $response->getStatusCode());
